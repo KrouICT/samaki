@@ -1,0 +1,333 @@
+<section>
+    <!DOCTYPE html>
+    <html lang="km">
+
+    <head>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Moul&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            :root {
+                --primary-color: #28a745;
+                --secondary-color: #f9195c;
+                --accent-color: #FFC107;
+                --light-color: #FFFFFF;
+                --dark-color: #263238;
+            }
+
+            h2 {
+                font-family: 'Moul', sans-serif;
+                font-weight: 400;
+                color: var(--primary-color);
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            h4 {
+                font-family: 'Moul', sans-serif;
+                font-weight: 400;
+                color: var(--primary-color);
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 30px;
+                color: #555;
+            }
+
+            .subjects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .subject-card {
+                background: #f8f9fa;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                text-align: center;
+                padding: 20px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .subject-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .subject-icon {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 10px;
+            }
+
+            .subject-title {
+                font-size: 1.1rem;
+                color: var(--dark-color);
+                margin: 0;
+            }
+
+            .enrollment-table {
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto 30px;
+                border-collapse: collapse;
+                animation: fadeIn 1s ease-in;
+            }
+
+            .enrollment-table th,
+            .enrollment-table td {
+                padding: 12px;
+                text-align: center;
+                border: 1px solid #ddd;
+                color: var(--dark-color);
+            }
+
+            .enrollment-table th {
+                background-color: var(--primary-color);
+                color: var(--light-color);
+            }
+
+            .enrollment-table tr:hover {
+                background-color: #f1f1f1;
+                transition: background-color 0.3s ease;
+            }
+
+            .chart-container {
+                max-width: 800px;
+                margin: 0 auto 30px;
+                position: relative;
+                height: 400px;
+                animation: fadeIn 1s ease-in;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @media (max-width: 768px) {
+                /* .subjects-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                } */
+
+                .subjects-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    /* Two columns on mobile */
+                    gap: 10px;
+                    /* Reduced gap for mobile */
+                }
+
+                .subject-card {
+                    padding: 15px;
+                }
+
+                .subject-icon {
+                    font-size: 2rem;
+                }
+
+                .subject-title {
+                    font-size: 1rem;
+                }
+
+                .enrollment-table {
+                    font-size: 0.9rem;
+                }
+
+                .enrollment-table th,
+                .enrollment-table td {
+                    padding: 8px;
+                }
+
+                .chart-container {
+                    height: 300px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <section>
+            <h2>សូមស្វាគមន៍</h2>
+            <p>របស់អនុវិទ្យាល័យសាមគ្គី។ អនុវិទ្យាល័យសាមគ្គីស្ថិតឆ្ងាយប្រមាណ១៥គីឡូម៉ែត្រពីការិយាល័យអប់រំ យុវជន
+                និងកីឡាស្រុកសំឡូត មានទីតាំងស្ថិតនៅភូមិចំការចេក ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង លេខកូដសាលា 02110503702។
+                បុគ្គលិកបង្រៀននិងមិនបង្រៀនសរុបចំនួន១៥នាក់ ក្នុងនោះស្រី៦នាក់។ មានអគារសិក្សា២ខ្នង បន្ទប់រៀនសរុប៩បន្ទប់
+                បណ្ណាល័យ១បន្ទប់ ទីចាត់ការ១បន្ទប់ បន្ទប់សិក្សាកុំព្យូទ័រ១បន្ទប់ និងបន្ទប់ទឹក៤បន្ទប់។
+                ហើយបង្កើតមុខវិជ្ជាដែលមាននៅសាលាដូចរូប។</p>
+            <h4><i class="fas fa-graduation-cap"></i>មុខវិជ្ជាសិក្សា</h4>
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-book"></i></div>
+                    <h3 class="subject-title">ភាសាខ្មែរ</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-calculator"></i></div>
+                    <h3 class="subject-title">គណិតវិទ្យា</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-history"></i></div>
+                    <h3 class="subject-title">ប្រវត្តិវិទ្យា</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-landmark"></i></div>
+                    <h3 class="subject-title">ភូមិវិទ្យា</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3 class="subject-title">សីលធម៌-ពលរដ្ឋវិជ្ជា</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-atom"></i></div>
+                    <h3 class="subject-title">រូបវិទ្យា</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-flask"></i></div>
+                    <h3 class="subject-title">គីមីវិទ្យា</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-leaf"></i></div>
+                    <h3 class="subject-title">ជីវវិទ្យា</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="subject-title">ផែនដីវិទ្យា</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-users"></i></div>
+                    <h3 class="subject-title">បំណិនជីវិត</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3 class="subject-title">អប់រំកាយ និងកីឡា</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-laptop"></i></div>
+                    <h3 class="subject-title">កុំព្យូទ័រ (ICT)</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-language"></i></div>
+                    <h3 class="subject-title">ភាសាអង់គ្លេស</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-volleyball-ball"></i></div>
+                    <h3 class="subject-title">បាល់ទះ</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-bowling-ball"></i></div>
+                    <h3 class="subject-title">ប៉េតង់</h3>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon"><i class="fas fa-arrows-alt-h"></i></div>
+                    <h3 class="subject-title">លោតចម្ងាយ</h3>
+                </div>
+            </div>
+            <h4><i class="fas fa-chart-line"></i>ស្ថិតិការចុះឈ្មោះសិស្ស</h4>
+            <table class="enrollment-table">
+                <thead>
+                    <tr>
+                        <th>ឆ្នាំសិក្សា</th>
+                        <th>សរុប (នាក់)</th>
+                        <th>ស្រី (នាក់)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2020-2021</td>
+                        <td>357</td>
+                        <td>184</td>
+                    </tr>
+                    <tr>
+                        <td>2021-2022</td>
+                        <td>394</td>
+                        <td>213</td>
+                    </tr>
+                    <tr>
+                        <td>2022-2023</td>
+                        <td>381</td>
+                        <td>221</td>
+                    </tr>
+                    <tr>
+                        <td>2023-2024</td>
+                        <td>383</td>
+                        <td>222</td>
+                    </tr>
+                    <tr>
+                        <td>2024-2025</td>
+                        <td>390</td>
+                        <td>201</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4><i class="fas fa-chart-bar"></i>ក្រាបសរស្ថិតិសិស្ស</h4>
+            <!-- Chart for Combined Data -->
+            <div class="chart-container">
+                <canvas id="combinedStudentsChart"></canvas>
+            </div>
+        </section>
+        <script>
+            // Combined Students Chart
+            const combinedCtx = document.getElementById('combinedStudentsChart').getContext('2d');
+            new Chart(combinedCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2020-2021', '2021-2022', '2022-2023', '2023-2024', '2024-2025'],
+                    datasets: [
+                        {
+                            label: 'សរុបសិស្ស (នាក់)',
+                            data: [357, 394, 381, 383, 390],
+                            backgroundColor: '#28a745',
+                            borderColor: '#1f8b3c',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'ស្រី (នាក់)',
+                            data: [184, 213, 221, 222, 201],
+                            backgroundColor: '#1565C0',
+                            borderColor: '#104d9e',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'ចំនួនសិស្ស (នាក់)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'ឆ្នាំសិក្សា'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        title: {
+                            display: true,
+                            text: 'ស្ថិតិសិស្សតាមឆ្នាំ'
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+
+    </html>
+</section>
