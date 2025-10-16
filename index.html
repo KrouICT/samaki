@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="km">
 <head>
@@ -931,16 +932,16 @@
     <section class="slideshow-container">
         <div class="slides">
             <div class="slide active">
-                <img src="https://png.pngtree.com/template/20220330/ourlarge/pngtree-green-fresh-durian-fruit-food-fresh-taobao-banner-image_900517.jpg" alt="School Campus">
-                <div class="caption">រូបភាពទី១: ទិដ្ឋភាពសាលា</div>
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVjsa_XFZvXaypkk8gpFBLyU-9XyVc90m4lUwtuqCS4Z2h6s9euaD7AoNQl8kSEx8QOo83EobZTDn5UepDZwmAqJqu_a7OW8BmiNSwnsEAOsEWuQDfQzTIaTG9zl2v2c4C6unibES-5pR4DO7YfO7uUy6ZRRx-XT3O3oWJTdBcwLi3C4kx7G3FjLgM8I8/w1200-h630-p-k-no-nu/photo_22_2024-06-05_13-08-57.jpg" alt="School Campus">
+                <div class="caption">ទិដ្ឋភាពសាលា</div>
             </div>
             <div class="slide">
-                <img src="https://png.pngtree.com/template/20220330/ourlarge/pngtree-fresh-literary-fruit-fresh-food-durian-taobao-banner-image_900604.jpg" alt="Student Activities">
-                <div class="caption">រូបភាពទី២: សកម្មភាពសិស្ស</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAMPhAgYSudQeztYAl9P9kv3VCV5UG9qtO7Q_mPJEcUd8sJi654gzhmS3tdXipuFcwFTE&usqp=CAU" alt="Student Activities">
+                <div class="caption">សកម្មភាពសិស្ស</div>
             </div>
             <div class="slide">
-                <img src="https://munmenggroup.com/wp-content/uploads/2023/10/durian-banner-3-1.jpg" alt="School Events">
-                <div class="caption">រូបភាពទី៣: ព្រឹត្តិការណ៍សាលា</div>
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnT6F7Z3PKdfziY8QqvxCSwoN-lIVXpl7QkgNca5vSbZM_2YfJrvmjBDazwT1gGWLdKnLfQnTdjlN_cS3yzonTfAwtfMFNqPboPsIeCOUSfshWLG8xhY-fjE7JoF7eczQcPIiqQszwlk1CsLYRXk_ooGGBfntsyjNWUjVPlUx56xOUBtllxclVwDojhaQ/w640-h360/photo_14_2024-06-05_13-08-57.jpg" alt="School Events">
+                <div class="caption"> ព្រឹត្តិការណ៍សាលា</div>
             </div>
         </div>
         <div class="navigation-manual">
@@ -1332,6 +1333,7 @@
                         <div class="welcome-section">
                             <h1>📊 កម្មវិធីតាមដានពិន្ទុ និងវត្តមានសិស្ស</h1>
                             <p>តាមដានលទ្ធផលសិក្សា និងវត្តមានរបស់សិស្ស - ឆ្នាំសិក្សា២០២៥-២០២៦</p>
+                            <a href="trackingV2.html">👶តាមដានកូនខ្ញុំ</a>
                         </div>
                         <div class="track-filters">
                             <div class="filter-row">
@@ -1477,7 +1479,7 @@
                     return;
                 }
 
-                const scoreSheets = AppState.sheetNames.filter(sheet => !sheet.startsWith('Att-'));
+                const scoreSheets = AppState.sheetNames.filter(sheet => !sheet.startsWith('Att-')&& sheet !== 'userLogin');
                 monthSelect.innerHTML = '<option value="">-- ជ្រើសរើសខែ --</option>' +
                     scoreSheets.map(sheet => `<option value="${sheet}">${sheet}</option>`).join('');
 
